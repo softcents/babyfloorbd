@@ -1,0 +1,523 @@
+/* Site fixes — keep this file when installing new scripts */
+
+/* Horizontal promo banners: full image on mobile */
+.promo-banner,
+.app-home .promo-banner {
+    min-height: 0 !important;
+    height: auto !important;
+    overflow: visible !important;
+    background: none !important;
+    background-image: none !important;
+}
+
+.promo-banner-img,
+.app-home .promo-banner-img {
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    object-fit: contain !important;
+    object-position: center !important;
+    display: block !important;
+}
+
+/* Fallback if old background-image markup still exists */
+.promo-banner[style*="background-image"] {
+    min-height: 0 !important;
+    aspect-ratio: 16 / 5;
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+}
+
+@media (max-width: 900px) {
+    .promo-banner[style*="background-image"] {
+        aspect-ratio: 16 / 7;
+    }
+}
+
+
+/* =========================================================
+   COMPLETE BLACK THEME (HEADER, FOOTER, BUTTONS, FLASH SALE)
+   ========================================================= */
+
+/* --- 1. Global Color Overrides --- */
+:root {
+    --primary: #000000 !important;
+    --primary-dark: #000000 !important;
+    --primary-light: #1f1f1f !important;
+    --primary-rgb: 0, 0, 0 !important;
+    --footer-bg: #000000 !important;
+    --copyright-bg: #000000 !important;
+}
+
+/* --- 2. Header (Desktop & Mobile - FIXED AT TOP) --- */
+body.notice-closed,
+body:not(.has-notice) {
+    --notice-height: 0px !important;
+}
+
+.site-header,
+.app-home .site-header {
+    position: -webkit-sticky !important;
+    position: sticky !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    margin-top: 0 !important;
+    background-color: #000000 !important;
+    background: #000000 !important;
+    border-bottom: 1px solid #1a1a1a !important;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.45) !important;
+    z-index: 9999 !important;
+}
+
+.site-header.is-scrolled,
+.app-home .site-header.is-scrolled {
+    position: -webkit-sticky !important;
+    position: sticky !important;
+    top: 0 !important;
+    background-color: #000000 !important;
+    box-shadow: 0 4px 22px rgba(0, 0, 0, 0.7) !important;
+}
+
+.header-inner {
+    margin-top: 0 !important;
+}
+
+.logo {
+    display: inline-flex !important;
+    align-items: center !important;
+}
+
+.logo img {
+    max-height: 48px !important;
+    width: auto !important;
+    object-fit: contain !important;
+    display: block !important;
+}
+
+@media (max-width: 900px) {
+    .app-home .site-header {
+        position: -webkit-sticky !important;
+        position: sticky !important;
+        top: 0 !important;
+        margin-top: 0 !important;
+    }
+
+    .app-home .header-inner {
+        padding: 8px 12px !important;
+    }
+
+    .app-home .logo img {
+        max-height: 42px !important;
+        width: auto !important;
+    }
+}
+
+/* Nav Links */
+.main-nav a,
+.main-nav a:link,
+.main-nav a:visited,
+.nav-cat-desktop .nav-cat-link {
+    color: #f5f5f5 !important;
+}
+
+.main-nav a:hover,
+.main-nav a.active,
+.nav-cat-desktop .nav-cat-link:hover,
+.nav-cat-desktop .nav-cat-link.active {
+    color: #ffffff !important;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+.nav-cat-chevron,
+.nav-cat-chevron i {
+    color: #ffffff !important;
+}
+
+/* Mobile Menu Toggle */
+.menu-toggle,
+.menu-toggle i,
+.app-home .menu-toggle,
+.app-home .menu-toggle i {
+    color: #ffffff !important;
+}
+
+/* Search Bar in Header */
+.mobile-search input,
+.site-header .mobile-search input {
+    background: #161616 !important;
+    border: 1px solid #2e2e2e !important;
+    color: #ffffff !important;
+}
+
+.mobile-search input::placeholder,
+.site-header .mobile-search input::placeholder {
+    color: #8c8c8c !important;
+}
+
+.mobile-search .search-icon,
+.site-header .mobile-search .search-icon {
+    color: #a0a0a0 !important;
+}
+
+.mobile-search-results {
+    background: #141414 !important;
+    border: 1px solid #282828 !important;
+    color: #ffffff !important;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.7) !important;
+}
+
+.mobile-search-results a {
+    color: #f0f0f0 !important;
+    border-bottom: 1px solid #222222 !important;
+}
+
+.mobile-search-results a:hover {
+    background: #202020 !important;
+    color: #ffffff !important;
+}
+
+/* Desktop Dropdown Menus */
+.nav-sub-dropdown,
+.nav-child-dropdown {
+    background: #111111 !important;
+    border: 1px solid #262626 !important;
+    box-shadow: 0 14px 34px rgba(0, 0, 0, 0.65) !important;
+}
+
+.nav-sub-link,
+.nav-child-dropdown a {
+    color: #dddddd !important;
+}
+
+.nav-sub-link:hover,
+.nav-child-dropdown a:hover {
+    background: #1c1c1c !important;
+    color: #ffffff !important;
+}
+
+.nav-sub-arrow {
+    color: #888888 !important;
+}
+
+/* Mobile Drawer */
+.app-home .main-nav {
+    background: #0d0d0d !important;
+}
+
+.app-home .drawer-head {
+    background: #000000 !important;
+    border-bottom: 1px solid #222222 !important;
+}
+
+.app-home .drawer-title,
+.app-home .drawer-close {
+    color: #ffffff !important;
+}
+
+.app-home .drawer-links {
+    background: #0d0d0d !important;
+}
+
+.app-home .drawer-links a {
+    color: #efefef !important;
+    border-bottom-color: #1a1a1a !important;
+}
+
+.app-home .drawer-links a:hover {
+    color: #ffffff !important;
+}
+
+.app-home .drawer-sub-links {
+    background: #141414 !important;
+}
+
+.app-home .drawer-sub-parent,
+.app-home .drawer-child-links a {
+    color: #cccccc !important;
+}
+
+.app-home .mobile-sub-toggle,
+.app-home .drawer-child-toggle {
+    color: #888888 !important;
+}
+
+/* --- 3. Order Buttons & Actions (Black Theme) --- */
+.btn-order,
+button.btn-order,
+.vom-btn[data-mode="order"],
+.app-home .btn-order,
+.product-actions .btn-order {
+    background-color: #000000 !important;
+    background: #000000 !important;
+    color: #ffffff !important;
+    border: 1px solid #1a1a1a !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
+    transition: background 0.2s, transform 0.15s, box-shadow 0.15s !important;
+}
+
+.btn-order:hover,
+button.btn-order:hover,
+.app-home .btn-order:hover,
+.product-actions .btn-order:hover {
+    background-color: #222222 !important;
+    background: #222222 !important;
+    color: #ffffff !important;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4) !important;
+}
+
+.btn-cart,
+button.btn-cart,
+.app-home .btn-cart {
+    border: 1.5px solid #222222 !important;
+    color: #111111 !important;
+}
+
+.btn-cart:hover,
+button.btn-cart:hover,
+.app-home .btn-cart:hover {
+    background: #000000 !important;
+    color: #ffffff !important;
+    border-color: #000000 !important;
+}
+
+/* Product Detail Buy Now & Add to Cart */
+.btn-buy-now,
+.product-detail-actions .btn-buy-now {
+    background-color: #000000 !important;
+    background: #000000 !important;
+    color: #ffffff !important;
+    border: 1px solid #1a1a1a !important;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35) !important;
+}
+
+.btn-buy-now:hover,
+.product-detail-actions .btn-buy-now:hover {
+    background-color: #262626 !important;
+    background: #262626 !important;
+    color: #ffffff !important;
+}
+
+.btn-add-cart,
+.product-detail-actions .btn-add-cart {
+    background: #ffffff !important;
+    color: #000000 !important;
+    border: 2px solid #000000 !important;
+}
+
+.btn-add-cart:hover,
+.product-detail-actions .btn-add-cart:hover {
+    background: #000000 !important;
+    color: #ffffff !important;
+}
+
+/* Checkout Submit / Order Confirmation Buttons */
+.ck-place-order,
+.ck-submit-wrap .ck-place-order,
+.ck-mobile-bar-btn,
+.ck-otp-btn-confirm {
+    background: #000000 !important;
+    background-color: #000000 !important;
+    color: #ffffff !important;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4) !important;
+}
+
+.ck-place-order:hover,
+.ck-mobile-bar-btn:hover,
+.ck-otp-btn-confirm:hover {
+    background: #222222 !important;
+    background-color: #222222 !important;
+    color: #ffffff !important;
+}
+
+/* Header Cart Button */
+.cart-btn {
+    background: #000000 !important;
+    color: #ffffff !important;
+    border: 1px solid #282828 !important;
+}
+
+.cart-btn:hover {
+    background: #1f1f1f !important;
+    color: #ffffff !important;
+}
+
+.cart-count,
+#cart-qty {
+    background: #ffffff !important;
+    color: #000000 !important;
+}
+
+.cart-dropdown-count {
+    color: #ffffff !important;
+    background: #000000 !important;
+}
+
+/* --- 4. Flash Sale & Hot Deals (Black Theme) --- */
+.flash-sale-head {
+    background: linear-gradient(135deg, #050505 0%, #1c1c1c 50%, #0d0d0d 100%) !important;
+    border: 1px solid #2a2a2a !important;
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.45) !important;
+}
+
+.hot-deal-head {
+    background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%) !important;
+    border: 1px solid #262626 !important;
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.35) !important;
+}
+
+.flash-sale-timer .timer-box,
+.hot-deal-timer .timer-box {
+    background: #ffffff !important;
+    border: 1px solid #e0e0e0 !important;
+}
+
+.flash-sale-timer .timer-box b,
+.hot-deal-timer .timer-box b {
+    color: #000000 !important;
+}
+
+.flash-sale-timer .timer-colon,
+.hot-deal-timer .timer-colon {
+    color: #ffffff !important;
+}
+
+/* Badges (Flash Sale & Hot Deals) */
+.flash-badge,
+.deal-badge {
+    background: #000000 !important;
+    color: #ffffff !important;
+    border: 1px solid #222222 !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3) !important;
+}
+
+.flash-badge i {
+    color: #ffd54a !important;
+}
+
+/* Flash Progress Bar */
+.flash-progress {
+    background: #e8e8e8 !important;
+}
+
+.flash-progress-bar {
+    background: linear-gradient(90deg, #333333, #000000) !important;
+}
+
+/* Flash Sale / Hot Deals View All */
+.flash-sale-viewall,
+.hot-deal-viewall {
+    background: #ffffff !important;
+    color: #000000 !important;
+    border: 1px solid #e0e0e0 !important;
+}
+
+.flash-sale-viewall:hover,
+.hot-deal-viewall:hover {
+    background: #000000 !important;
+    color: #ffffff !important;
+    border-color: #000000 !important;
+}
+
+/* Product Prices (Black) */
+.product-price,
+.app-home .product-price,
+.product-detail-price #newPrice,
+.mini-cart-line,
+.ck-mobile-bar-total strong {
+    color: #000000 !important;
+}
+
+/* --- 5. Footer (Desktop & Mobile) --- */
+.site-footer,
+.app-home .site-footer {
+    background-color: #000000 !important;
+    background: #000000 !important;
+    color: #bbbbbb !important;
+    border-top: 1px solid #1a1a1a !important;
+}
+
+.site-footer h4,
+.footer-grid h4,
+.app-home .site-footer h4 {
+    color: #ffffff !important;
+}
+
+.site-footer p,
+.footer-about p,
+.app-home .footer-about p {
+    color: #aaaaaa !important;
+}
+
+.site-footer ul li a {
+    color: #aaaaaa !important;
+}
+
+.site-footer ul li a:hover {
+    color: #ffffff !important;
+    padding-left: 4px;
+}
+
+.social-links a {
+    background: #141414 !important;
+    color: #ffffff !important;
+    border: 1px solid #252525 !important;
+}
+
+.social-links a:hover {
+    background: #2b2b2b !important;
+    border-color: #3a3a3a !important;
+    color: #ffffff !important;
+}
+
+.newsletter-form input {
+    background: #141414 !important;
+    border: 1px solid #2e2e2e !important;
+    color: #ffffff !important;
+}
+
+.newsletter-form input::placeholder {
+    color: #777777 !important;
+}
+
+.newsletter-form button {
+    background: #ffffff !important;
+    color: #000000 !important;
+    font-weight: 700 !important;
+}
+
+.newsletter-form button:hover {
+    background: #e0e0e0 !important;
+    color: #000000 !important;
+}
+
+.footer-bottom,
+.app-home .footer-bottom {
+    background-color: #050505 !important;
+    background: #050505 !important;
+    border-top: 1px solid #161616 !important;
+    color: #777777 !important;
+}
+
+.footer-bottom a {
+    color: #ffffff !important;
+}
+
+/* Mobile Bottom Bar */
+.mobile-bottom-nav,
+.app-home .mobile-bottom-nav {
+    background: rgba(0, 0, 0, 0.96) !important;
+    border-top: 1px solid #1f1f1f !important;
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.5) !important;
+}
+
+.app-home .mobile-bottom-nav a {
+    color: #999999 !important;
+}
+
+.app-home .mobile-bottom-nav a.active {
+    color: #ffffff !important;
+}
